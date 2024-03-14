@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 14-03-2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: BEATRICE THOMAS
+###  ROLL NO : 212223110005
+###  DEPARTMENT: CSE IOT
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -45,21 +45,8 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 
 ### Figure-03 SERVO MOTOR OVERVIEW 
 
- 
 
-
- 
-
-
-
-
-
-CIRCUIT DIAGRAM
- 
- 
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
-
-### FIGURE 04 CIRCUIT DIAGRAM
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -74,12 +61,56 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+```
+#include<Servo.h>
+Servo Serv1;
+
+  int pos=0;
+
+void setup()
+{
+  Serv1.attach(9);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  for(pos=0;pos<=180;pos+=1)
+  {
+    Serv1.write(pos);
+    delay(20);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+       //delay(500);
+  }
+  for(pos=180;pos>=180;pos-=1)
+  {
+    Serv1.write(pos);
+    delay(20);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+       //delay(500);
+  }  
+}
+```
+
+### CIRCUIT DIAGRAM :
+
+
+![Screenshot 2024-03-14 110556](https://github.com/Beatricethomas/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/140035214/f690e562-c974-46a7-8b94-85bc1ae3b9a8)
 
 
 
+### SCHEMATIC VIEW:
 
 
+![Screenshot 2024-03-14 112420](https://github.com/Beatricethomas/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/140035214/d38f619e-30c6-4f04-a7a8-b14edf968eed)
+
+
+### GRAPH:;
+
+
+![Screenshot 2024-03-14 113022](https://github.com/Beatricethomas/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/140035214/7f900874-0370-4749-8e23-3243191b6696)
 
 
 
